@@ -1,0 +1,74 @@
+﻿
+
+.sidebar-menu {
+    font-size: 1.5rem;
+}
+
+#employee-detail-table {
+    margin: 1em 0;
+}
+
+#employee-detail-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+#employee-detail-grid1 {
+    grid-column: 1;
+}
+
+#employee-detail-grid2 {        
+    grid-column: 2;
+}
+
+#myUL, #myUL li {
+    list-style-type: none;
+}
+
+#employee-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#managers-container > ul {
+    list-style-type: none;
+}
+
+.dataTables_filter {
+    visibility: collapse;
+}
+
+#search-conditions-div
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+}
+
+#search-conditions-div div {
+    margin: 0 10px 0 0 ;
+}
+
+
+
+#search-conditions-div button {
+    width: 120px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-employee-age {
+    width: 50px;
+}
+
+.search-employee-select {
+    width: 160px;
+}
+.search-employee-text {
+    width: 120px;
+}
+}

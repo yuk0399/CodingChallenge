@@ -1,0 +1,23 @@
+﻿@page
+
+@model IEnumerable<EmployeeManagement.Models.Employee>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h2>List</h2>
+
+<table>
+    <tr>
+        <td>書名</td>
+        <td>価格</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,130 @@
+﻿
+
+
+@model EmployeeManagement.Models.EmployeeSearchViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <section class="content-header">
+                    <h1>
+                        Employees
+                    </h1>
+                    <button type="button" class="btn btn-warning pull-right" onclick="location.href='Employee/Create'"><i class="fa fa-plus"></i> Add Employee</button>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box box-warning">
+                                <form asp-controller="Employee" asp-action="Index" method="get">
+                                <div id="search-conditions-div">
+                                    <div>
+                                        <label>Name: </label>
+                                        <input class="search-employee-text" type="text" maxlength='20' asp-for="name" />
+                                    </div>
+                                    <div>
+                                        <label>Department: </label>
+                                        <select class="search-employee-select" asp-for="departmentId" asp-items="Model.DepartmentList">
+                                            <option value="">All</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>Age: </label>
+                                        <input class="search-employee-age" type="tel" maxlength='2' asp-for="ageStart" >
+                                        -
+                                        <input class="search-employee-age" type="tel" maxlength='2' asp-for="ageEnd" >
+                                    </div>
+                                    <div>
+                                        <label>Manager: </label>
+                                        <select class="search-employee-select" asp-for="managerId" asp-items="Model.ManagerList">
+                                            <option value="">All</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-warning">Search</button>
+                                </div>
+                                </form>
+                                <div class="box-body">
+                                    <table id="employee-table" class="table table-hover table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Age</th>
+                                                <th>Gender</th>
+                                                <th>Department</th>
+                                                <th>Manager</th>
+                                                <th>Salary</th>
+                                                <th>Date of Joining</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Employees)
+                                            {
+                                                <tr>
+                                                    <td>@Html.DisplayFor(modelItem => item.FormattedId)</td>
+                                                    <td><a href="Employee/Detail/@item.Id"><i class="fa fa-user-o"></i> @Html.DisplayFor(modelItem => item.Name)</a></td>
+                                                    <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.GenderValue)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.DepartmentName)</td>
+                                                    <td>@if (item.ManagerId != null)
+                                                    {<a href="Employee/Detail/@item.ManagerId"><i class="fa fa-user-o"></i> @Html.DisplayFor(modelItem => item.ManagerName)</a>}</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.Salary)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.JoiningDate)</td>
+                                                    <td><a href="Employee/Update/@item.Id"><i class="fa fa-edit"></i></a> | <a onclick="Delete(@item.Id)"><i class="fa fa-remove"></i></a></td>
+                                                </tr>
+                                            }
+                                    </table>
+                                    <br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DataTables -->
+                <script src="~/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+                <script src="~/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+                <!-- page script -->
+                <script>
+    $(function () {
+        var table = $('#employee-table').DataTable({
+
+} );
+
+    });
+    function Delete(id){
+        var txt;
+        var r = confirm("Are you sure you want to Delete?");
+        if (r == true) {
+
+            $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("Delete", "Employee")',
+                data: {
+                    id: id
+                },
+                error: function (result) {
+                    alert("error");
+                },
+                success: function (result) {
+                    if (result == true) {
+                        var baseUrl="/Employee";
+                        window.location.reload();
+                    }
+                    else {
+                        alert("There is a problem, Try Later!");
+                    }
+                }
+            });
+        }
+    }
+                </script>
+</table>

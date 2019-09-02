@@ -1,0 +1,88 @@
+﻿
+
+
+@model IEnumerable<EmployeeManagement.Models.Department>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <section class="content-header">
+                    <h1>
+                        Departments
+                    </h1>
+                    <button type="button" class="btn btn-warning pull-right" onclick="location.href='Department/Create'"><i class="fa fa-plus"></i> Add Department</button>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box box-warning">
+                                <div class="box-body">
+                                    <table id="department-table" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Department Id</th>
+                                                <th>Department Name</th>
+
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                            {
+                                            <tr>
+                                                <td>@Html.DisplayFor(modelItem => item.DepartmentIdValue)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.DepartmentName)</td>
+                                                <td><a href="Department/Update/@item.Id"><i class="fa fa-edit"></i></a> | <a onclick="Delete(@item.Id)"><i class="fa fa-remove"></i></a></td>
+                                            </tr>
+                            }
+                                    </table>
+                                    <br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DataTables -->
+                <script src="~/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+                <script src="~/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+                <!-- page script -->
+                <script>
+    $(function () {
+        $('#department-table').DataTable();
+    });
+    function Delete(id){
+        var txt;
+        var r = confirm("Are you sure you want to Delete?");
+        if (r == true) {
+
+            $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("Delete", "Department")',
+                data: {
+                    id: id
+                },
+                error: function (result) {
+                    alert("error");
+                },
+                success: function (result) {
+                    if (result == true) {
+                        var baseUrl="/Department";
+                        window.location.reload();
+                    }
+                    else {
+                        alert("There is a problem, Try Later!");
+                    }
+                }
+            });
+        }
+    }
+                </script>
+</table>
