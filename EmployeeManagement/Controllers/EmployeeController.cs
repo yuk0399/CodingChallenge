@@ -17,25 +17,6 @@ namespace EmployeeManagement.Controllers
             this._context = context;
         }
 
-        public IActionResult List()
-        {
-            var result = this._context.Employee.GroupJoin(this._context.Department,
-                    e => e.DepartmentId, d => d.Id, (employee, department) => new
-                    {
-                        EmployeeName = employee.Name,
-                        DepartmentName = department,
-
-                    })
-                    .SelectMany(x => x.DepartmentName.DefaultIfEmpty(),
-                    (a, b) => new
-                    {
-                        emp = a.EmployeeName,
-                        dept = b == null ? "No Department" : b.DepartmentName
-                    });
-
-            return View(result);
-        }
-
         public ActionResult Index(string name, string ageStart, string ageEnd, string managerId, string departmentId)
         {
             var joinedList = (
