@@ -19,7 +19,7 @@ This file includes below:
 
 ### Unit test
 
-file
+[Unit Test](/UnitTest_forCodingChallenge.pdf)
 
 ###  Defect list
 
@@ -35,28 +35,29 @@ Developer needs windows, mac or any OS system which can setup ASP.NET Core.
 
 1. Install mySQL
 
-https://www.mysql.com/downloads/
+    https://www.mysql.com/downloads/
 
-1. Install ASP.NET Core SDK
+2. Install ASP.NET Core SDK
 
-https://dotnet.microsoft.com/download
+    https://dotnet.microsoft.com/download
 
-1. Change the connection string
+3. Change the connection string
 
-Open `/EmployeeManagement/appsettings.json` and update `"ConnectionString"`
+    Open `/EmployeeManagement/appsettings.json` and update `"ConnectionString"`
 
-ex:
-server=<your ServerAddress ex)localhost>;userid=<your mySQL user name>;password=<password>;database=EmployeeDB;
+    ex:
+    server=<your ServerAddress ex)localhost>;userid=<your mySQL user name>;password=<password>;database=EmployeeDB;
 
-1. Create Database
+4. Create Database
 
-Open terminal window and move to EmployeeManagement directory, and do below commands.
+    Open terminal window and move to EmployeeManagement directory, and do below commands.
 
-`dotnet ef migrations add InitialCreate`
+    `dotnet ef migrations add InitialCreate`
 
-`dotnet ef database update`
+    `dotnet ef database update`
 
-1. Start application!
+5. Start application!
+
 
 # Working application
 
