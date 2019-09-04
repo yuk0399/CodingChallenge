@@ -4,6 +4,19 @@ This repository is made for **The Coding Challenge, powered by SchoolBell.chat.*
 
 by Yutaka Kawakami & Harry Lo
 
+# Requirements
+
+1. Capture basic employee information 
+2. Search for employees and display results
+3. Sortable based on Employee Name, Department Name, Manager Name
+
+![Employee](https://github.com/yuk0399/CodingChallenge/tree/images/employee.png)
+
+4. Display hierarchy of Managers to whom the employee reports
+5. Display all the staff who reports to this employee
+
+![Employee Detail](https://github.com/yuk0399/CodingChallenge/tree/images/employeedetail.png)
+
 # Documents
 
 ## Documents
