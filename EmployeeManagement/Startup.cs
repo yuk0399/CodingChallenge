@@ -13,7 +13,6 @@ using Microsoft.EntityFrameworkCore;
 using EmployeeManagement.Models;
 using MySql.Data.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using System.Data.Entity.Migrations;
 
 namespace EmployeeManagement
 {
