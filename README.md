@@ -40,7 +40,7 @@ The unit test was done manually for all business logic.
 
 [Unit Test](/UnitTest_forCodingChallenge.pdf)
 
-* I tried to use some testingframeworks (xUnit, MSTest), but there was no time to finish all.
+*I tried to use some testingframeworks (xUnit, MSTest), but there was no time to finish all.
 
 ##  Defect list
 
