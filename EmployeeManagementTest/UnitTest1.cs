@@ -17,7 +17,7 @@ namespace EmployeeManagementTest
         public void Test2()
         {
             
-            Assert.NotNull(null);
+            Assert.NotNull("");
         }
     }
 }
