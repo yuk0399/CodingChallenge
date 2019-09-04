@@ -10,12 +10,12 @@ by Yutaka Kawakami & Harry Lo
 2. Search for employees and display results
 3. Sortable based on Employee Name, Department Name, Manager Name
 
-![Employee](https://github.com/yuk0399/CodingChallenge/tree/images/employee.png)
+![Employee](https://user-images.githubusercontent.com/54500481/64244788-c8d7ba00-cf5d-11e9-99fb-5f4b8a7b4566.png)
 
 4. Display hierarchy of Managers to whom the employee reports
 5. Display all the staff who reports to this employee
 
-![Employee Detail](https://github.com/yuk0399/CodingChallenge/tree/images/employeedetail.png)
+![Employee Detail](https://user-images.githubusercontent.com/54500481/64244795-cb3a1400-cf5d-11e9-997a-675142daee6b.png)
 
 # Documents
 
@@ -39,6 +39,8 @@ This file includes below:
 The unit test was done manually for all business logic.
 
 [Unit Test](/UnitTest_forCodingChallenge.pdf)
+
+* I tried to use some testingframeworks (xUnit, MSTest), but there was no time to finish all.
 
 ##  Defect list
 
