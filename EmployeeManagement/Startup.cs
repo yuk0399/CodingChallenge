@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using EmployeeManagement.Models;
 using MySql.Data.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System.Data.Entity.Migrations;
 
 namespace EmployeeManagement
 {
@@ -21,6 +22,7 @@ namespace EmployeeManagement
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -39,6 +41,7 @@ namespace EmployeeManagement
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<MyContext>(options => options.UseMySQL(Configuration.GetConnectionString("MyContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,7 +70,11 @@ namespace EmployeeManagement
             });
 
         }
+
     }
+
+    
+
 
     public static class HtmlHelpers
     {
