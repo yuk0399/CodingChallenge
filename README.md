@@ -1,27 +1,17 @@
+---
+
 # CodingChallenge
-<<<<<<< HEAD
-# Documents
--Solution Architecture Document
--High Level design document
--Pitch deck
--Assumptions
+
+This repository is made for **The Coding Challenge, powered by SchoolBell.chat.**
 
 
+by Yutaka Kawakami & Harry Lo
 
--Unit test report with 75% code and branch coverage
-
-# Defect list
-
-# install/run/access the working application
-
-# Any environment/application setup information
-
-# Known issue
-=======
-
-**The Coding Challenge, powered by SchoolBell.chat**
+---
 
 ## Documents
+
+### Documents
 
 [Coding Challenge Document](/2019AraCodingChallenge.pptx)
 
@@ -38,13 +28,29 @@ This file includes below:
 
 ### Unit test
 
+The unit test was done manually for all business logic.
+
 [Unit Test](/UnitTest_forCodingChallenge.pdf)
 
 ###  Defect list
 
-file
+- Login function is unavailable
 
-## Working Application
+---
+
+## Tools used
+
+- ASP.NET Core MVC framework
+
+- Entity framework (for database)
+
+- Razor Pages (for view)
+
+- MySQL
+
+- Admin LTE (includes Bootstrap, jQuery)
+
+---
 
 ## Application Setup
 
@@ -77,15 +83,35 @@ Developer needs windows, mac or any OS system which can setup ASP.NET Core.
 
 5. Start application!
 
+---
 
-# Working application
+## Continuous deployment
 
-link
+This working application enables continuous deployment from GitHub.
+
+Once latest code pushes to the Github repository, the application on the cloud will also update automatically.
+
+https://ara-coding-emservice.azurewebsites.net/
+
+*This application deployed on Microsoft Azure but not working yet.
+
+ It will move soon.
+ 
+---
+
+## Known issues
+
+### Employee search function
+
+- When you input characters except numbers in `Age`, it will be considered as 0.
+
+### Employee Create / Update
+
+- When you input characters (include empty) except numbers in `Age`, `Salary`, it will be considered as 0.
+
+- You can make a employee with empty `FirstName`, `LastName`, `Salary`.
 
 
-# Known issue
+### Department Create / Update
 
-- Login function is unavailable
-
-- 
->>>>>>> 3727b3d8def77a9607ea1c7436ed7f319ff9530c
+- You can make a department with empty `DepartmentName`.
