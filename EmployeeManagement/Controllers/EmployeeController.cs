@@ -188,6 +188,8 @@ namespace EmployeeManagement.Controllers
             d.LastName = employee.LastName;
             d.Gender = employee.Gender;
             d.Age = employee.Age;
+            d.DepartmentId = employee.DepartmentId;
+            d.ManagerId = employee.ManagerId;
             d.Salary = employee.Salary;
 
             _context.SaveChanges();
