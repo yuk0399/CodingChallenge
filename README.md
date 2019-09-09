@@ -93,7 +93,7 @@ This working application enables continuous deployment from GitHub.
 
 Once latest code pushes to the Github repository, the application on the cloud will also update automatically.
 
-https://ara-coding-emservice.azurewebsites.net/
+https://ara-coding-emservice3.azurewebsites.net/
 
 *This application deployed on Microsoft Azure but not working yet.
 
