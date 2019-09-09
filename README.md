@@ -95,10 +95,6 @@ Once latest code pushes to the Github repository, the application on the cloud w
 
 https://ara-coding-emservice3.azurewebsites.net/
 
-*This application deployed on Microsoft Azure but not working yet.
-
- It will move soon.
-
 # Known issues
 
 ### Employee search function
